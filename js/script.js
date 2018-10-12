@@ -1,5 +1,8 @@
-        const Http = new XMLHttpRequest();
-        const url='https://garrettpeake.github.io';
-        Http.onreadystatechange=(e)=>{
-        console.log(Http.responseText)
+function logURL(requestDetails) {
+  console.log("Loading: " + requestDetails.url);
 }
+
+browser.webRequest.onBeforeRequest.addListener(
+  logURL,
+  {urls: ["<all_urls>"]}
+);
