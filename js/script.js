@@ -1,13 +1,14 @@
-console.log(window.location.search);
-function saveToFirebase(data) {
-    var dataObject = {
-        DATA: data
+function saveToFirebase(email) {
+    var emailObject = {
+        email: email
     };
 
-    firebase.database().ref('test').push().set(dataObject)
+    firebase.database().ref('subscription-entries').push().set(emailObject)
         .then(function(snapshot) {
+            success(); // some success method
         }, function(error) {
             console.log('error' + error);
+            error(); // some error method
         });
 }
 
