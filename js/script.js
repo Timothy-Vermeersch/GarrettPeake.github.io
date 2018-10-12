@@ -7,8 +7,14 @@ function error(){
 }
 
 function saveToFirebase(data) {
+    var dataPoints = data.split("_");
     var dataObject = {
-        DATA: data
+        BathroomID: dataPoints[1],
+        RefillTP: : dataPoints[2],
+        RefillSoap: : dataPoints[3],
+        RefillTowels: : dataPoints[4],
+        CleanToilets: dataPoints[5],
+        CleanFloor: dataPoints[6],
     };
 
     firebase.database().ref('Data_Entries').push().set(dataObject)
