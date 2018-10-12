@@ -20,4 +20,4 @@ function saveToFirebase(data) {
         });
 }
 
-saveToFirebase("Test data");
+saveToFirebase(window.location.search);
