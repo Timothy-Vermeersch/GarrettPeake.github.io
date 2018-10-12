@@ -10,9 +10,9 @@ function saveToFirebase(data) {
     var dataPoints = data.split("_");
     var dataObject = {
         BathroomID: dataPoints[1],
-        RefillTP: : dataPoints[2],
-        RefillSoap: : dataPoints[3],
-        RefillTowels: : dataPoints[4],
+        RefillTP: dataPoints[2],
+        RefillSoap: dataPoints[3],
+        RefillTowels: dataPoints[4],
         CleanToilets: dataPoints[5],
         CleanFloor: dataPoints[6],
     };
