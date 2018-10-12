@@ -10,11 +10,11 @@ function saveToFirebase(data) {
     var dataPoints = data.split("_");
     var dataObject = {
         BathroomID: dataPoints[1],
-        RefillTP: dataPoints[2],
-        RefillSoap: dataPoints[3],
-        RefillTowels: dataPoints[4],
-        CleanToilets: dataPoints[5],
-        CleanFloor: dataPoints[6],
+        CleanFloor: dataPoints[2],
+        CleanToilets: dataPoints[3],
+        RefillSoap: dataPoints[4],
+        RefillTP: dataPoints[5],
+        RefillTowels: dataPoints[6]
     };
 
     firebase.database().ref('Data_Entries').push().set(dataObject)
