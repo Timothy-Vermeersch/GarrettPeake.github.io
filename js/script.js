@@ -1,10 +1,12 @@
-function logURL(requestDetails) {
-  console.log("Loading: " + requestDetails.url);
-}
+(function(open) {
 
-console.log("Test");
+    XMLHttpRequest.prototype.open = function(method, url, async, user, pass) {
 
-browser.webRequest.onBeforeRequest.addListener(
-  logURL,
-  {urls: ["<all_urls>"]}
-);
+        this.addEventListener("readystatechange", function() {
+            console.log(this.readyState); // this one I changed
+        }, false);
+
+        open.call(this, method, url, async, user, pass);
+    };
+
+})(XMLHttpRequest.prototype.open);
