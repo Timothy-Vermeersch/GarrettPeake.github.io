@@ -20,4 +20,6 @@ function saveToFirebase(data) {
         });
 }
 
-saveToFirebase(window.location.search);
+if(window.location.search.includes("PACKET")){
+    saveToFirebase(window.location.search.substr(1));
+}
