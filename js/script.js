@@ -4,7 +4,7 @@ function saveToFirebase(data) {
         DATA: data
     };
 
-    firebase.database().ref('test').push().set(emailObject)
+    firebase.database().ref('test').push().set(dataObject)
         .then(function(snapshot) {
         }, function(error) {
             console.log('error' + error);
